@@ -43,11 +43,11 @@ public class CharacterStats : MonoBehaviour
         CheckHP();
     }
     
-    public void Takedmg(int dmg)
+    public virtual void Takedmg(int dmg)
     {
         int HPAfterDmg = currHP - dmg;
         SetHP(HPAfterDmg); 
-        Debug.Log(currHP);
+        // Debug.Log(currHP);
     }
 
     public void Heal(int heal)
