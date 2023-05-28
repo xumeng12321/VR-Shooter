@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1819003788591760355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819003788591760353}
+  - component: {fileID: 1819003788591760358}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1819003788591760353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819003788591760355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819003788591760358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819003788591760355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc38c23488dd9a448f80b05a8fe973c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObjects:
+  - {fileID: 6415827394950658369, guid: 02223769ed538c44c92f875b4879db08, type: 3}
+  - {fileID: 3662701602165788724, guid: f235c3f7ef16f21439107dafef1aae2c, type: 3}
+  - {fileID: 5147462702801770813, guid: 7cb9f136d1e905349bee4489c4e4c3e3, type: 3}
+  - {fileID: 1750194293569709780, guid: 90cfe40aac09e5247bea70182e06a58a, type: 3}
+  myContainers:
+  - {fileID: 7576685931052730444, guid: a6c88604673eb4340ac0a33ca152ffc6, type: 3}
+  - {fileID: 9137429808889507257, guid: 15373cdfd2e8ec642ab1a13bcba34783, type: 3}
+  npc: {fileID: 2031310326393070066, guid: b6cc9da24c2cf5f47a56406d040f1a35, type: 3}
+  counter1: 0
+  counter2: 0
+  countContainer: 0

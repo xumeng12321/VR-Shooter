@@ -20,7 +20,8 @@ public class SpawnEnemy : MonoBehaviour
         {
             Spawners[i] = transform.GetChild(i).gameObject;
         }
-        StartWave();
+        StartCoroutine(StartWave());
+        
     }
     void Update()
     {
@@ -38,8 +39,9 @@ public class SpawnEnemy : MonoBehaviour
         EnemyLeft--;
     }
 
-    private void StartWave()
-    {
+    IEnumerator StartWave()
+    {   
+        yield return new WaitForSeconds(3);
         WaveNumber = 1;
         EnemyKilled = 0;
         for (int i = 0; i < EnemyPerWave; i++)

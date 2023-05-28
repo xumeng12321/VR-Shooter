@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
                 // Debug.Log(target.GetComponent<PlayerStats>().currHP);
             }
         }
-        else if (target.transform.position.z < 30) target.GetComponent<PlayerStats>().Die();
+        else if (target.transform.position.y < -20) target.GetComponent<PlayerStats>().Die();
         else if(enemyStats.isDead == true)
         {
             Dead();
