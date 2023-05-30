@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/unity bridg.unity
-    guid: edf5fe3e099c9194ea9015cc84f00851
+    path: Assets/Scenes/Menu.unity
+    guid: 80b52596b1675244c9fca95171949e0e
+  - enabled: 1
+    path: Assets/Scenes/physics.unity
+    guid: ed5387515b829be41a9e87e7cc2bfcc8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: abcdb0a0a68651e48b51ce07ec8ddb50,
       type: 2}

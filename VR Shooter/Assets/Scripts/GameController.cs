@@ -19,10 +19,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+
 
 
     public void AddScore(int Score)
@@ -38,6 +35,6 @@ public class GameController : MonoBehaviour
 
     public void ReloadScene() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 }

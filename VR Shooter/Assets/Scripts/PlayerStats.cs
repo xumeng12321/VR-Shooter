@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class PlayerStats : CharacterStats 
 {
     // Start is called before the first frame update
     private PlayerHUD hud;
     GameController gameController;
-
     public Image DamageOverlay;
-    public float duration;
-    public float fadespeed;
-
-    private float durationTimer;
-
+    public float Duration;
+    public float FadeSpeed;
+    
+    private float DurationTimer;
     void Start()
     {
         hud = GetComponent<PlayerHUD>(); 
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         InitVariables();  
+        DurationTimer = 0;
         DamageOverlay.color = new Color(DamageOverlay.color.r,DamageOverlay.color.g,DamageOverlay.color.b,0);
+
         // Debug.Log(maxHP);
     }
     
@@ -29,16 +28,23 @@ public class PlayerStats : CharacterStats
     {
         if(DamageOverlay.color.a > 0)
         {
-            durationTimer += Time.deltaTime;
-            if (durationTimer > duration)
+            DurationTimer += Time.deltaTime;
+            if(DurationTimer > Duration)
             {
-                float tempAlpha = DamageOverlay.color.a ;
-                tempAlpha -= Time.deltaTime * fadespeed;
+                float tempAlpha = DamageOverlay.color.a;
+                tempAlpha -= Time.deltaTime * FadeSpeed;
                 DamageOverlay.color = new Color(DamageOverlay.color.r,DamageOverlay.color.g,DamageOverlay.color.b,tempAlpha);
             }
         }
-        
+
     }
+
+    public override void Takedmg(int dmg)
+    {
+        base.Takedmg(dmg);
+        DamageOverlay.color = new Color(DamageOverlay.color.r,DamageOverlay.color.g,DamageOverlay.color.b,1);
+    }
+
     public override void CheckHP()
     {
         base.CheckHP();
@@ -46,12 +52,7 @@ public class PlayerStats : CharacterStats
         // hud.test(currHP,maxHP);
         // Debug.Log(maxHP);
     }
-    public override void Takedmg(int dmg)
-    {
-        base.Takedmg(dmg);
-        durationTimer = 0;
-        DamageOverlay.color = new Color(DamageOverlay.color.r,DamageOverlay.color.g,DamageOverlay.color.b,1);
-    }
+
     // void Update()
     // {
     //     if(Input.GetKeyDown(KeyCode.L))

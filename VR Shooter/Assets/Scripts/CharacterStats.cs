@@ -47,7 +47,7 @@ public class CharacterStats : MonoBehaviour
     {
         int HPAfterDmg = currHP - dmg;
         SetHP(HPAfterDmg); 
-        // Debug.Log(currHP);
+        Debug.Log(currHP);
     }
 
     public void Heal(int heal)
