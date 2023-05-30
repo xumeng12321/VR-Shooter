@@ -8,7 +8,7 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject[] Spawners;
     public GameObject Enemy;
     private int WaveNumber;
-    public int EnemyLeft = 20;
+    public int EnemyLeft;
     public int EnemyPerWave = 2 ;
     public int EnemyKilled;
 

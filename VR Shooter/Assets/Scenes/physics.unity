@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.25330302, g: 0.21698889, b: 0.23319246, a: 1}
+  m_IndirectSpecularColor: {r: 0.24958295, g: 0.21665658, b: 0.23310208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17e07259c1242e43a4bb1b857e57308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currScore: 0
+  EnemyNumber: 0
   Score: {fileID: 1676946728}
 --- !u!4 &207698688
 Transform:
@@ -16030,7 +16030,7 @@ GameObject:
   - component: {fileID: 666437067}
   - component: {fileID: 666437066}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: EnemyLeftText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16053,7 +16053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.1843548, y: -0}
+  m_AnchoredPosition: {x: 2.99, y: 0.02}
   m_SizeDelta: {x: 186.17, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &666437066
@@ -16076,7 +16076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Score: '
+  m_text: 'Enemy Left:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -16339,7 +16339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719449020}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 198.4, y: 4.39, z: 116.4}
+  m_LocalPosition: {x: 535, y: -34, z: -192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17282,7 +17282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592905014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.628002, y: 0, z: 25.87}
+  m_LocalPosition: {x: -28.46, y: 0, z: 25.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17423,7 +17423,7 @@ GameObject:
   - component: {fileID: 1676946729}
   - component: {fileID: 1676946728}
   m_Layer: 5
-  m_Name: 'Score '
+  m_Name: EnemyLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17446,7 +17446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.1556451, y: -0}
+  m_AnchoredPosition: {x: -2.53, y: -0.01}
   m_SizeDelta: {x: 187.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1676946728
@@ -17469,7 +17469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -18440,37 +18440,37 @@ PrefabInstance:
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27
+      value: -26.996
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.39
+      value: 0.324
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.1
+      value: 26.144
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7387299
+      value: 0.51462084
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.48354986
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.67400163
+      value: -0.46952924
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.52998793
       objectReference: {fileID: 0}
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
@@ -18485,7 +18485,7 @@ PrefabInstance:
     - target: {fileID: 8565972283275330997, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 91.686
       objectReference: {fileID: 0}
     - target: {fileID: 8571581809618251203, guid: 7e7f2840eb6a6294fb9d04582dbf8079,
         type: 3}

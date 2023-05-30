@@ -7,14 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public int currScore = 0;
+    public int EnemyNumber;
 
     [SerializeField] public TMPro.TMP_Text Score;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        currScore = 0;
+        EnemyNumber = GetComponentInChildren<SpawnEnemy>().EnemyLeft;
         UpdateScoreUI();
     }
 
@@ -24,13 +26,13 @@ public class GameController : MonoBehaviour
 
     public void AddScore(int Score)
     {
-        currScore += Score;
+        EnemyNumber -= Score;
         UpdateScoreUI();
     }
 
     private void UpdateScoreUI()
     {
-        Score.text = currScore.ToString(); 
+        Score.text = EnemyNumber.ToString(); 
     }
 
     public void ReloadScene() 
