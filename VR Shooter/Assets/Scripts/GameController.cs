@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public int EnemyNumber;
 
     [SerializeField] public TMPro.TMP_Text Score;
+    [SerializeField] public GameOver gameOver;
+    [SerializeField] public MissionComplete missionComplete;
 
     
 
@@ -22,7 +24,13 @@ public class GameController : MonoBehaviour
 
     // Update is called once per frame
 
-
+    void Update()
+    {
+        if (EnemyNumber == 0)
+        {
+            MissionCompleteDisplay();
+        } 
+    }
 
     public void AddScore(int Score)
     {
@@ -35,8 +43,13 @@ public class GameController : MonoBehaviour
         Score.text = EnemyNumber.ToString(); 
     }
 
-    public void ReloadScene() 
+    public void GameOverDisplay() 
     {
-        SceneManager.LoadScene(1);
+        gameOver.Setup();
+    }
+
+    public void MissionCompleteDisplay() 
+    {
+        missionComplete.Setup();
     }
 }

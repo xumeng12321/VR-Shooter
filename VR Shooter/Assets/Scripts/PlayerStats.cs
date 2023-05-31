@@ -65,7 +65,8 @@ public class PlayerStats : CharacterStats
 
     public override void Die()
     {
-        Debug.Log("Died");
-        gameController.ReloadScene();
+        // Debug.Log("Died");
+        // gameController.ReloadScene();
+        gameController.GameOverDisplay();
     }
 }

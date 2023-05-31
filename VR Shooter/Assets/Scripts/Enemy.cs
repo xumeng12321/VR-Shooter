@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     NavMeshAgent agent;
     GameObject target;
+    // GameObject enemy;
 
     EnemyStats enemyStats;
     [SerializeField] public float StopDistance = 1;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         float dist = Vector3.Distance(transform.position,target.transform.position); 
+        transform.LookAt(target.transform);
         if(dist < StopDistance && enemyStats.isDead != true)
         {
             StopEnemy();

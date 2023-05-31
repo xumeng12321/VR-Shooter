@@ -17,6 +17,7 @@ public class BackToMenu : MonoBehaviour
     {
         if(Back.action.ReadValue<float>()>0.5)
         {
+            
             SceneManager.LoadScene(0);
         }
     }
