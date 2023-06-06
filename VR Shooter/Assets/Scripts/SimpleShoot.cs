@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [AddComponentMenu("Nokobot/Modern Guns/Simple Shoot")]
 public class SimpleShoot : MonoBehaviour
@@ -26,12 +27,32 @@ public class SimpleShoot : MonoBehaviour
     public AudioClip FireSound;
     public AudioClip NoAmmo;
     public AudioClip Reloading;
+    public XRBaseInteractor SocketInteractor;
 
     public int maxAmmo = 8;
     private int currAmmo;
 
     public int totalAmmo = 40;
     private int ammoLeft;
+    private bool SliderPulled;
+
+    void AddMagazine(XRBaseInteractable interactable)
+    {
+        Reload();
+        source.PlayOneShot(Reloading);
+        SliderPulled = false;
+    }
+
+    void RemoveMagazine(XRBaseInteractable interactable)
+    {
+        source.PlayOneShot(Reloading);
+    }
+
+    public void Slider()
+    {
+        SliderPulled = true;
+        source.PlayOneShot(Reloading);
+    }
 
     void Start()  
     {
@@ -41,19 +62,24 @@ public class SimpleShoot : MonoBehaviour
 
         if (gunAnimator == null)
             gunAnimator = GetComponentInChildren<Animator>();
+        
+        SocketInteractor.onSelectEntered.AddListener(AddMagazine);
+        SocketInteractor.onSelectExited.AddListener(RemoveMagazine);
     }
 
     public void PullTrigger()
     {
         //Calls animation on the gun that has the relevant animation events that will fire
-        if(currAmmo > 0)
+        if(currAmmo > 0 && SliderPulled == true)
         {
             gunAnimator.SetTrigger("Fire");
+            gunAnimator.SetBool("CanShoot",true);
     
         }
         else
         {
             source.PlayOneShot(NoAmmo);
+            gunAnimator.SetBool("CanShoot",false);
         }
         
     }
@@ -63,30 +89,31 @@ public class SimpleShoot : MonoBehaviour
         if(ammoLeft > maxAmmo)
         {
             currAmmo = maxAmmo;
-            Debug.Log("currAmmo = maxAmmo");
-            Debug.Log(currAmmo);
+            // Debug.Log("currAmmo = maxAmmo");
+            // Debug.Log(currAmmo);
         }
         else
         {
             currAmmo = ammoLeft;
-            Debug.Log("currAmmo = ammoLeft");
-            Debug.Log(currAmmo);
+            // Debug.Log("currAmmo = ammoLeft");
+            // Debug.Log(currAmmo);
         }
         ammoLeft = totalAmmo - currAmmo;
-        Debug.Log("ammoLeft = totalAmmo - currAmmo");
-        Debug.Log(ammoLeft);
-        source.PlayOneShot(Reloading);
+        // Debug.Log("ammoLeft = totalAmmo - currAmmo");
+        // Debug.Log(ammoLeft);
+        // source.PlayOneShot(Reloading);
     
     }
 
     void Update()
     {
-        if(Vector3.Angle(transform.up, Vector3.up) > 100 && currAmmo < maxAmmo)
-        {
-            Reload();
-        }
+        // if(Vector3.Angle(transform.up, Vector3.up) > 100 && currAmmo < maxAmmo)
+        // {
+        //     Reload();
+        // }
 
         Text.text = currAmmo.ToString() + " / " + ammoLeft.ToString();
+
     }
 
     //This function creates the bullet behavior
