@@ -54,7 +54,7 @@ public class SpawnEnemy : MonoBehaviour
     public void NextWave()
     {
         WaveNumber++;
-        EnemyPerWave += 4;
+        EnemyPerWave += 2;
         EnemyKilled = 0;
         for (int i = 0; i < EnemyPerWave; i++)
         {
